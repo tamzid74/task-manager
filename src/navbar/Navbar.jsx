@@ -1,14 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../assets/images/logo/prioritize_7778966 (1).png";
+import logo from "../assets/logo/prioritize_7778966 (1).png";
 
 // import { motion } from "framer-motion";
-import { GiHotMeal } from "react-icons/gi";
-// import { useContext } from "react";
-// import { AuthContext } from "../provider/Authprovider";
-import { AwesomeButton } from "react-awesome-button";
+
+// import { AwesomeButton } from "react-awesome-button";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
-//   const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const navList = (
     <>
       <li>
@@ -27,9 +27,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive ? "text-primary font-semibold" : ""
           }
-        >
-          Meals
-        </NavLink>
+        ></NavLink>
       </li>
       <li>
         <NavLink
@@ -37,14 +35,12 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive ? "text-primary font-semibold" : ""
           }
-        >
-          <GiHotMeal className="text-xl"></GiHotMeal>
-        </NavLink>
+        ></NavLink>
       </li>
     </>
   );
   return (
-    <div className="max-w-full sticky inset-0 z-20 glass">
+    <div className="max-w-full sticky inset-0 z-20 bg-glass">
       <div className=" w-full max-w-[1250px] px-[25px] mx-auto">
         <div className="navbar">
           <div className="navbar-start">
@@ -74,17 +70,17 @@ const Navbar = () => {
             </div>
             <div className="flex items-center flex-wrap">
               <Link to="/">
-                <img className="w-10 lg:w-16" src={logo} alt="" />
+                <img className="w-8 lg:w-10" src={logo} alt="" />
               </Link>
             </div>
-            <Link to="/" className=" normal-case text-sm md:text-3xl font-bold">
+            {/* <Link to="/" className=" normal-case text-sm md:text-3xl font-bold">
               <span className="text-primary font-bold">Hostel</span>Hub
-            </Link>
+            </Link> */}
           </div>
           <div className="navbar-end hidden lg:flex">
             <ul className="flex gap-7 menu-horizontal px-1"> {navList}</ul>
           </div>
-          {/* <div className="navbar-end">
+          <div className="navbar-end">
             {user ? (
               <div className="dropdown dropdown-end z-10">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -119,11 +115,12 @@ const Navbar = () => {
                 </ul>
               </div>
             ) : (
-              <Link to="/login">
-                <AwesomeButton type="secondary"> Join Us</AwesomeButton>
-              </Link>
+              //   <Link to="/login">
+              //     <AwesomeButton type="secondary"> Join Us</AwesomeButton>
+              //   </Link>
+              ""
             )}
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

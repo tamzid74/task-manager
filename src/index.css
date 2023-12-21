@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}

@@ -1,9 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo/prioritize_7778966 (1).png";
 
-// import { motion } from "framer-motion";
-
-// import { AwesomeButton } from "react-awesome-button";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 
@@ -15,17 +12,29 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive ? "text-primary font-semibold" : ""
+            isActive ? "text-primary font-bold underline" : ""
           }
         >
           Home
         </NavLink>
       </li>
+      {user?.email && (
+        <li>
+          <NavLink
+            to="/dashboard/profiles"
+            className={({ isActive }) =>
+              isActive ? "text-primary font-bold underline" : ""
+            }
+          >
+            Dashboard
+          </NavLink>
+        </li>
+      )}
       <li>
         <NavLink
           to="/meals"
           className={({ isActive }) =>
-            isActive ? "text-primary font-semibold" : ""
+            isActive ? "text-primary font-bold" : ""
           }
         ></NavLink>
       </li>
@@ -93,19 +102,6 @@ const Navbar = () => {
                   className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
                 >
                   <li>{user && <span>{user?.displayName}</span>}</li>
-                  {user?.email && (
-                    <li>
-                      <NavLink
-                        to="/dashboard/profile"
-                        className={({ isActive }) =>
-                          isActive ? "text-primary font-semibold" : ""
-                        }
-                      >
-                        Dashboard
-                      </NavLink>
-                    </li>
-                  )}
-
                   <Link to="/login">
                     <li onClick={logOut}>
                       {" "}
@@ -115,9 +111,6 @@ const Navbar = () => {
                 </ul>
               </div>
             ) : (
-              //   <Link to="/login">
-              //     <AwesomeButton type="secondary"> Join Us</AwesomeButton>
-              //   </Link>
               ""
             )}
           </div>

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
@@ -16,6 +16,8 @@ const Register = () => {
   //   const axiosPublic = useAxiosPublic();
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
@@ -34,7 +36,7 @@ const Register = () => {
             return { ...prev };
           });
           toast.success("User Created", { id: toastId });
-          navigate("/");
+          navigate(from, { replace: true });
           const userInfo = {
             name: data.name,
             email: data.email,

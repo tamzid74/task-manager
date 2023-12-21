@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 // import logAnimation from "../assets/images/Login.json";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -16,6 +16,8 @@ const Login = () => {
   const [passError, setPassError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
@@ -29,7 +31,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         toast.success("Logged in...", { id: toastId });
-        navigate(location?.state ? location.state : "/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error.message);

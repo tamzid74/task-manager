@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 // import useAxiosPublic from "../hook/useAxiosPublic";
 import { AuthContext } from "../provider/AuthProvider";
@@ -9,13 +9,15 @@ const SocialLogin = () => {
   const { googleLogin } = useContext(AuthContext);
   // const axiosPublic = useAxiosPublic();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const handleLogin = (media) => {
     const toastId = toast.loading("Signing in....");
     media()
       .then((result) => {
         console.log(result.user);
         toast.success("Signed in...", { id: toastId });
-        navigate(`/`);
+        navigate(from, { replace: true });
         // const userInfo = {
         //   name: result.user?.displayName,
         //   email: result.user?.email,

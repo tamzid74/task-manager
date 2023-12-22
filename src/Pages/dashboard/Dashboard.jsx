@@ -1,7 +1,11 @@
 import { NavLink, Outlet } from "react-router-dom";
 // import TaskManagementDashboard from "./TaskManagementDashboard";
 import { RxTextAlignCenter } from "react-icons/rx";
-
+import { CgProfile } from "react-icons/cg";
+import { SlHome } from "react-icons/sl";
+import { Toaster } from "react-hot-toast";
+import { IoCreateOutline } from "react-icons/io5";
+import { RiTodoLine } from "react-icons/ri";
 const Dashboard = () => {
   const navList = (
     <>
@@ -12,7 +16,10 @@ const Dashboard = () => {
             isActive ? "text-primary font-bold" : ""
           }
         >
-          Profile
+          <div className="flex items-center gap-2">
+            <CgProfile className="text-lg" />
+            Profile
+          </div>
         </NavLink>
       </li>
       <li className="my-4">
@@ -22,7 +29,10 @@ const Dashboard = () => {
             isActive ? "text-primary font-bold" : ""
           }
         >
-          Create Task
+          <div className="flex items-center gap-2">
+            <IoCreateOutline className="text-lg" />
+            Create Task
+          </div>
         </NavLink>
       </li>
       <li className="my-4">
@@ -32,7 +42,10 @@ const Dashboard = () => {
             isActive ? "text-primary font-bold" : ""
           }
         >
-          To-Do
+          <div className="flex items-center gap-2">
+            <RiTodoLine className="text-lg" />
+            To-Do
+          </div>
         </NavLink>
       </li>
       <div className="divider"></div>
@@ -43,7 +56,10 @@ const Dashboard = () => {
             isActive ? "text-primary font-bold underline" : ""
           }
         >
-          Home
+          <div className="flex items-center gap-2">
+            <SlHome className="text-lg" />
+            Home
+          </div>
         </NavLink>
       </li>
     </>
@@ -53,13 +69,14 @@ const Dashboard = () => {
       <div className="drawer lg:drawer-open">
         <label
           htmlFor="my-drawer-2"
-          className=" text-3xl block p-5 drawer-button lg:hidden"
+          className=" text-3xl block py-2 drawer-button lg:hidden"
         >
           <RxTextAlignCenter />
         </label>
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col items-center justify-center">
+        <div className="drawer-content flex flex-col items-center py-16">
           <Outlet></Outlet>
+          <Toaster></Toaster>
         </div>
         <div className="drawer-side">
           <label

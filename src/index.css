@@ -11,27 +11,3 @@
 }
 
 
-/* Add your CSS styles here */
-.lists-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.task-list {
-  border: 1px solid #ccc;
-  padding: 10px;
-  width: 30%;
-}
-
-.task-item {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-bottom: 8px;
-  padding: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* ... Add more styles as needed ... */

@@ -8,7 +8,9 @@ import Dashboard from "../Pages/dashboard/Dashboard";
 import PrivateRoutes from "./PrivateRoutes";
 import TaskForm from "../Pages/dashboard/TaskForm";
 import Profile from "../Pages/dashboard/Profile";
-import TaskManagementDashboard from "../Pages/dashboard/TaskManagementDashboard";
+import Todo from "../Pages/dashboard/ToDo";
+import About from "../Pages/About";
+import Gallery from "../Pages/Gallery";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "about",
+        element: <About></About>,
+      },
+      {
+        path: "gallery",
+        element: <Gallery></Gallery>,
       },
       {
         path: "login",
@@ -58,7 +68,7 @@ const router = createBrowserRouter([
         path: "todo",
         element: (
           <PrivateRoutes>
-            <TaskManagementDashboard></TaskManagementDashboard>
+            <Todo></Todo>
           </PrivateRoutes>
         ),
       },

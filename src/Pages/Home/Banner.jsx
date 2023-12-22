@@ -22,7 +22,7 @@ const Banner = () => {
           </p>
 
           <div className="indicator">
-            <Link to="/dashboard">
+            <Link to="/dashboard/profiles">
               <button className="cursor-pointer rounded-full font-semibold overflow-hidden relative z-100 border border-green-500 group px-8 py-2">
                 <span className="relative z-10 text-green-500 group-hover:text-white text-base duration-500">
                   Let’s Explore

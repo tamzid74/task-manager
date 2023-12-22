@@ -32,19 +32,23 @@ const Navbar = () => {
       )}
       <li>
         <NavLink
-          to="/meals"
+          to="/about"
           className={({ isActive }) =>
             isActive ? "text-primary font-bold" : ""
           }
-        ></NavLink>
+        >
+          About Us
+        </NavLink>
       </li>
       <li>
         <NavLink
-          to="/upcoming"
+          to="/gallery"
           className={({ isActive }) =>
             isActive ? "text-primary font-semibold" : ""
           }
-        ></NavLink>
+        >
+          Gallery
+        </NavLink>
       </li>
     </>
   );
@@ -82,9 +86,6 @@ const Navbar = () => {
                 <img className="w-8 lg:w-10" src={logo} alt="" />
               </Link>
             </div>
-            {/* <Link to="/" className=" normal-case text-sm md:text-3xl font-bold">
-              <span className="text-primary font-bold">Hostel</span>Hub
-            </Link> */}
           </div>
           <div className="navbar-end hidden lg:flex">
             <ul className="flex gap-7 menu-horizontal px-1"> {navList}</ul>

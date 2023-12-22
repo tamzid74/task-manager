@@ -12,7 +12,6 @@ const Tasks = ({ task, refetch }) => {
       isDragging: !!monitor.isDragging(),
     }),
   }));
-  console.log(isDragging);
   const axiosSecure = useAxiosSecure();
   const handleDelete = (id) => {
     Swal.fire({

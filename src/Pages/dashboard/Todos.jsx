@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useDrop } from "react-dnd";
 import useAxiosSecure from "../../hook/useAxiosSecure";
 import useTasksQuery from "../../hook/useTasksQuery";

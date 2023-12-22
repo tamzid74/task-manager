@@ -1,8 +1,14 @@
-# React + Vite
+# Task Management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live site Link
 
-Currently, two official plugins are available:
+Click here for live site: [https://task-manager-b147d.web.app/](https://task-manager-b147d.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+:white_check_mark: Features implement in this project:
+
+- Provide clear and intuitive navigation menus to help users move through the website and find what they're looking for.
+- responsive for every device
+- implement firebase authentication
+- using mongodb for store my data
+- sweet alert-2,react host toast implement in my website (when you try to login and registration successfully then you will get a toast)
+- implement react router
